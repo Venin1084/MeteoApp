@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf0 \expnd0\expndtw0\kerning0
+\
+//Questo e da mette al inizio del css permette di non dover richiamare il codice ma solo il nome consiglio di inserirlo al inizio del file css ma non importa davvero la sua posizione\
+\
+:root \{
+\fs24 \
+
+\fs29\fsmilli14667 \'a0\'a0\'a0\'a0\'a0--blu: #316de4;
+\fs24 \
+
+\fs29\fsmilli14667 \'a0\'a0\'a0\'a0\'a0--giallo: #f8ca4d;
+\fs24 \
+
+\fs29\fsmilli14667 \'a0\'a0\'a0\'a0\'a0--binaco: #ffffff;
+\fs24 \
+
+\fs29\fsmilli14667 \'a0\'a0\'a0\'a0\'a0--grigio: #a2a4a6;
+\fs24 \
+
+\fs29\fsmilli14667 \'a0\'a0\'a0\'a0\'a0--nero: #000000;
+\fs24 \
+
+\fs29\fsmilli14667 \'a0\'a0\'a0\'a0 --backsezioneFrom: #e6ecf3\
+  \'a0  --inputcolore:#a2a4a6
+\fs24 \
+
+\fs29\fsmilli14667 \'a0\'a0\'a0\}\
+\
+Esempio di richiamo\
+\
+body\{\
+	color: var(--blu);//tutto il testo dovrebbe manifestarsi blu\
+\}
+\fs24 \
+\
+//Lo pensato come un modo per aiutarci a poter modificare e gestirei colori senza impazzire a ripetere lo stesso colore 100 volte e funziona su qualsiasi cosa in css richiami in colore}

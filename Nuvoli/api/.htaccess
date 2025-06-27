@@ -1,0 +1,10 @@
+# Allow “pretty” URLs like /api/citta to hit index.php
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteBase /AppMeteo-1/api/
+
+# If the request is not for a real file or directory,
+# rewrite it internally to index.php, preserving /citta as PATH_INFO
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php/$1 [L,QSA]

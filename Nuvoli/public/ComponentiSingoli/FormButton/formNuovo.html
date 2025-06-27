@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="AppMetoFrontendMaterial/logoNuvoli.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuvolì</title>
+    <link rel="stylesheet" href="formButtonStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        /* Stili aggiuntivi per l'app meteo */
+        .weather-container {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .weather-card {
+            background: var(--bianco);
+            border-radius: 21px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode .weather-card {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        .weather-card h1 {
+            color: var(--blu);
+            margin-bottom: 10px;
+        }
+
+        body.dark-mode .weather-card h1 {
+            color: var(--giallo);
+        }
+
+        .weather-card h3 {
+            color: var(--grigio);
+            margin-bottom: 20px;
+        }
+
+        body.dark-mode .weather-card h3 {
+            color: var(--text-dark);
+        }
+
+        #city-select {
+            width: 60%;
+            padding: 15px;
+            border: 2px solid var(--backsezioneFrom);
+            border-radius: 15px;
+            font-size: 16px;
+            margin: 10px 0;
+            background-color: var(--backsezioneFrom);
+            color: var(--inputcolore);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode #city-select {
+            background-color: var(--border-dark);
+            color: var(--text-dark);
+            border-color: var(--border-dark);
+        }
+
+        #city-select:focus {
+            border-color: var(--blu);
+            box-shadow: 0 0 10px rgba(49, 109, 228, 0.3);
+        }
+
+        #city-select-btn {
+            background-color: var(--giallo);
+            color: var(--blu);
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 15px;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        #city-select-btn:hover {
+            background-color: var(--gialloHover);
+            transform: scale(1.05);
+        }
+
+        #weather-info {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--backsezioneFrom);
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode #weather-info {
+            background: var(--border-dark);
+        }
+
+        #weather-info h3 {
+            color: var(--blu);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        body.dark-mode #weather-info h3 {
+            color: var(--giallo);
+        }
+
+        #weather-info p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: var(--nero);
+        }
+
+        body.dark-mode #weather-info p {
+            color: var(--text-dark);
+        }
+
+        #temperature {
+            font-size: 48px !important;
+            font-weight: bold;
+            color: var(--blu) !important;
+            margin: 20px 0 !important;
+        }
+
+        body.dark-mode #temperature {
+            color: var(--giallo) !important;
+        }
+
+        #weather-icon {
+            width: 100px;
+            height: 100px;
+            margin: 10px 0;
+        }
+
+        .user-info {
+            position: absolute;
+            top: 20px;
+            right: 120px;
+            color: var(--bianco);
+            font-weight: bold;
+            display: none;
+        }
+
+        body.dark-mode .user-info {
+            color: var(--text-dark);
+        }
+
+        .user-info h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        #logout-btn {
+            background-color: var(--grigio);
+            color: var(--bianco);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        #logout-btn:hover {
+            background-color: var(--nero);
+            transform: scale(1.05);
+        }
+
+        .initial-screen {
+            text-align: center;
+            color: var(--bianco);
+        }
+
+        body.dark-mode .initial-screen {
+            color: var(--text-dark);
+        }
+
+        .initial-screen h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: var(--bianco);
+        }
+
+        body.dark-mode .initial-screen h1 {
+            color: var(--text-dark);
+        }
+
+        .initial-screen h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--bianco);
+        }
+
+        body.dark-mode .initial-screen h3 {
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <button id="toggleTheme" aria-label="Toggle dark mode"></button>
+    </nav>
+
+    <div id="user-info" class="user-info">
+        <h2>Welcome <span id="welcome-user"></span>!</h2>
+        <button id="logout-btn">Logout</button>
+    </div>
+
+    <div id="overlay"></div>
+
+    <div class="posizionamentoCentro initial-screen" id="initial-screen">
+        <h1>Nuvolì</h1>
+        <h3>App Meteo</h3>
+        <button class="btn" id="show-login">Inizia</button>
+    </div>
+
+    <div class="popup" id="popup-container">
+        <div class="close-btn"><img src="AppMetoFrontendMaterial/Ref/icone/iconaChiusura.png" alt="Chiudi"></div>
+
+        <!-- Login Form (visibile di default) -->
+        <div class="form login-form" id="login-form">
+            <h2>Login</h2>
+            <form id="form-id" method="POST" action="../../../api/login.php">
+                <div class="form-element">
+                    <input type="text" name="username" placeholder="Nome" required>
+                </div>
+                <div class="form-element">
+                    <input type="password" name="password" placeholder="Password" class="password-input" required>
+                    <input type="checkbox" class="toggle-password styleCheckbox check">
+                    <label class="styleCheckbox">Mostra la password</label>
+                </div>
+                <div class="form-element">
+                    <button class="btn-form" type="submit" id="form-btn">Entra</button>
+                </div>
+            </form>
+            <div class="formBotton">
+                <div class="form-element">
+                    <a href="#" class="switch-to-register">
+                        <span class="dark-only">Oppure</span> <span class="registrazioneLink">Registrati</span>
+                    </a>
+                </div>
+                <div class="form-element">
+                    <a href="../../MiddlePage/middlePage.html" class="continuaOspite" id="continua-ospite">Continua Come
+                        Ospite</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Form (nascosto di default) -->
+        <div class="form register-form" id="register-form" style="display: none;">
+            <h2>Registrazione</h2>
+            <form id="form-register" method="POST" action="../../../api/register.php">
+                <div class="form-element">
+                    <input type="text" name="username" placeholder="Nome" required>
+                </div>
+                <div class="form-element">
+                    <input type="password" name="password" placeholder="Password" class="password-input" required>
+                    <input type="checkbox" class="toggle-password styleCheckbox check">
+                    <label class="styleCheckbox">Mostra la password</label>
+                </div>
+                <div class="form-element">
+                    <button class="btn-form" type="submit">Registrati</button>
+                </div>
+            </form>
+            <div class="formBotton">
+                <div class="form-element">
+                    <a href="#" class="switch-to-login">
+                        <span class="dark-only">Oppure</span> <span class="registrazioneLink">Accedi</span>
+                    </a>
+                </div>
+                <div class="form-element">
+                    <a href="../../MiddlePage/middlePage.html" class="continuaOspite" id="continua-ospite-reg">Continua
+                        Come Ospite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="formButtonJs.js"></script>
+</body>
+
+</html>

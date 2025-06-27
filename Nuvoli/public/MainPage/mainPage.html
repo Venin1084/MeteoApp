@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="AppMetoFrontendMaterial/logoNuvoli.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuvolì</title>
+  <link rel="stylesheet" href="mainPageStyle.css" />
+
+</head>
+
+<body>
+  <div class="overlay" id="overlay"></div>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="../MiddlePage/middlePage.html">
+        <img src="AppMetoFrontendMaterial/logoNuvoli.png" alt="Logo Nuvoli" />
+      </a>
+      <h2 class="nameBrand">NUVOLÌ</h2>
+    </div>
+
+    <!-- Sidebar Contatti -->
+    <div class="off-screen-menu">
+      <div class="contatti">
+        <h2 class="sidebarTitle">Contattaci</h2>
+        <div class="form-element"><input type="text" placeholder="Nome" /></div>
+        <div class="form-element"><input type="email" placeholder="Email" /></div>
+        <div class="form-element"><textarea placeholder="Messaggio"></textarea></div>
+        <div class="form-element"><button class="btn-form">Invia</button></div>
+      </div>
+    </div>
+
+    <!-- Navbar Icone e Hamburger -->
+    <nav>
+      <div class="elemetini">
+        <div class="darkMode-container">
+
+          <!-- Icona per modalità -->
+          <!-- Sostituisci il vecchio pulsante con questo -->
+          <button id="toggleTheme" aria-label="Toggle dark mode" class="theme-toggle">
+            <img src="AppMetoFrontendMaterial/Ref/icone/icons8-non-disturbare-2-100.png" alt="Dark mode" id="themeIcon"
+              class="theme-icon">
+          </button>
+        </div>
+        <div class="icona-container">
+          <a href="../index.html">
+            <img class="iconaUser" src="AppMetoFrontendMaterial/Ref/icone/iconaUser.png" alt="Esci" />
+          </a>
+          <div class="tooltip">Esci</div>
+        </div>
+        <div class="ham-menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Barra di ricerca città -->
+  <div class="search-wrapper">
+    <input type="text" id="city" placeholder="Inserisci città..." autocomplete="off" />
+    <img src="AppMetoFrontendMaterial/Ref/icone/iconaLente.png" class="search-icon" alt="search" />
+    <div id="suggerimenti" class="suggestions-box"></div>
+  </div>
+
+  <div class="main-content">
+    <!-- Weather Today -->
+    <section class="weather-today">
+      <div class="dati-wrapper">
+
+        <div class="dati">
+          <div class="alertaMeteo">
+            <div class="allerta">
+              <img class="dengerIcon" src="AppMetoFrontendMaterial/Ref/icone/icons8-danger-100.png" alt="Allerta">
+            </div>
+            <div>
+              <h4 class="cityAlert">Allerta</h4>
+              <p class="cityDenger">Precipitazioni gravi</p>
+            </div>
+          </div>
+          <div class="weather-icon" id="weatherIcon">
+            <img src="AppMetoFrontendMaterial/Ref/meteo/NuvolePlu.svg" alt="Icona Meteo">
+          </div>
+
+        </div>
+        <div class="dati">
+          <div class="dxInfo">
+            <div id="cityName" class="cityName">Torino</div>
+            <div id="temperature" class="cityTemperature">19°</div>
+            <div id="date" class="dayToday">Lunedì 26</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Info Specifiche -->
+    <section class="infospefiche">
+
+      <h5 class="oggi">Oggi</h5>
+      <div class="forecast-slider-wrapper">
+        <button class="arrow left-arrow">&lt;</button>
+        <div class="forecast-slider" id="forecastSlider"></div>
+        <button class="arrow right-arrow">&gt;</button>
+      </div>
+
+
+      <h2 class="oggi">Alba e Tramonto</h2>
+      <section class="sun-times">
+        <div class="sun-info">
+          <span id="sunrise">Alba 05:45</span>
+          <span id="sunset">Tramonto 21:10</span>
+        </div>
+        <canvas id="sunGraph" width="600" height="150"></canvas>
+        <div class="time-labels">
+          <span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span>
+        </div>
+      </section>
+    </section>
+
+    <!-- Condizioni Climatiche + Newsletter -->
+    <section class="infospefiche">
+      <h2 class="oggi">Condizioni Climatiche</h2>
+      <div class="climate-conditions">
+        <div class="climate-box">Vento<br><span id="wind">0.2km/h</span></div>
+        <div class="climate-box">Umidità<br><span id="humidity">20%</span></div>
+        <div class="climate-box">Precipitazioni<br><span id="rain">7%</span></div>
+        <div class="climate-box">Indice UV<br><span id="uvIndex">3</span></div>
+      </div>
+      <section class="newsletter">
+        <h3 class="titileNewsletter">Newsletter</h3>
+        <p class="subTitleNews">Resta aggiornato!</p>
+        <p class="pNewsletter"> Il meteo che vuoi sempre qui!</p>
+        <div class="newsIscrizione">
+          <input type="email" placeholder="Email" />
+          <button class="btn-inscriviti">Iscriviti</button>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo">
+      <img src="AppMetoFrontendMaterial/logoNuvoli.png" alt="Logo Nuvoli" />
+      <h2 class="nameBrand">NUVOLI</h2>
+    </div>
+    <div class="footerLinks">
+      <a href="">Privacy</a>
+      <a href="">Crediti</a>
+      <a href="">Team</a>
+    </div>
+  </footer>
+
+  <script src="mainPageJS.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dropdown Lingue Giulia</title>
+
+    <style>
+
+        body {
+            background: #316de4;
+            margin: 2rem;
+            font-family: Arial, sans-serif;
+        }
+
+        #dropdown {
+            position: relative;
+            display: inline-block;
+            display: flex;
+            justify-content: right;
+        }
+
+        #dropdownBtn {
+            background: #ffffff;
+            border-radius: 25px;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 5px #e6ecf3;
+            font-size: 16px;
+            font-weight: 600;
+            min-width: 130px;
+            transition: border-radius 0.3s ease;
+        }
+
+        #dropdownBtn.open {
+            border-radius: 25px 25px 0 0;
+        }
+
+        #dropdownBtn img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+
+        #dropdownBtn .language-text {
+            white-space: nowrap;
+        }
+
+        #dropdownMenu {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #ffffff;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 4px 10px #e6ecf3;
+            width: 130px;
+            display: flex;
+            flex-direction: column;
+            pointer-events: none;
+            opacity: 0;
+            transition: height 0.3s ease, opacity 0.3s ease;
+        }
+
+        #dropdownMenu.open {
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        #dropdownMenu button {
+            background: #ffffff;
+            border: none;
+            padding: 10px 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            border-top: none;
+            transition: background-color 0.1s ease;
+        }
+
+        #dropdownMenu button:hover {
+            background-color: #f0f0f0;
+        }
+
+        #dropdownMenu button img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Bottoni lingue -->
+    <div id="dropdown" role="menu">
+        <button id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+            <img src="Italia.png" alt="Bandiera Italiana" draggable="false">
+            <span class="language-text">Italiano</span>
+        </button>
+        <div id="dropdownMenu" role="menu">
+            <button type="button" role="menuitem">
+                <img src="Italia.png" alt="Bandiera Italiana" draggable="false"> Italiano</button>
+            <button type="button" role="menuitem">
+                <img src="inghilterra.jpg" alt="Bandiera Inglese" draggable="false"> English</button>
+            <button type="button" role="menuitem">
+                <img src="francia.png" alt="Bandiera Francese" draggable="false">Français</button>
+            <button type="button" role="menuitem">
+                <img src="marocco.png" alt="Bandiera Marocchina" draggable="false">العربية</button>
+            <button type="button" role="menuitem">
+                <img src="albania.png" alt="Bandiera Albanese" draggable="false">Shqip</button>
+            <button type="button" role="menuitem">
+                <img src="iran.webp" alt="Bandiera Iraniana" draggable="false">Finglish</button>
+        </div>
+    </div>
+
+    <script>
+        // Javascript per la tendina
+        const btn = document.getElementById('dropdownBtn'); // Per gestire il bottone
+        const menu = document.getElementById('dropdownMenu'); // Menù opzioni
+
+        btn.addEventListener('click', () => { // Quando clicchi apre e chiud il menù
+            if (menu.classList.contains('open')) { // Se il menù è aperto, lo chiude
+                menu.style.height = menu.scrollHeight + 'px';
+                requestAnimationFrame(() => {
+                    menu.style.height = '0'; // Tornatene al tuo posto!
+                    menu.classList.remove('open'); // Nasconde il menù
+                    btn.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false'); // Accessibilità per screen reader (non so cosa sia XD)
+                });
+            } else {
+                menu.style.height = '0'; // Apre il menù se è chiuso
+                menu.classList.add('open');
+                btn.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                requestAnimationFrame(() => { // Animazione in basso
+                    menu.style.height = menu.scrollHeight + 'px';
+                });
+            }
+        });
+
+        // Quando finisce la transizione, si resetta l’altezza
+        menu.addEventListener('transitionend', () => {
+            if (menu.classList.contains('open')) {
+                menu.style.height = 'auto';
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

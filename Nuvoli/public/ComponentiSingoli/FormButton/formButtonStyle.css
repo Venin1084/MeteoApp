@@ -1,0 +1,305 @@
+:root {
+  --blu: #316de4;
+  --giallo: #f8ca4d;
+  --gialloHover: #e6b847;
+  --bianco: #ffffff; /* corretto */
+  --grigio: #a2a4a6;
+  --nero: #000000;
+  --backsezioneFrom: #e6ecf3;
+  --inputcolore: #a2a4a6;
+
+  /* Dark mode variables */
+  --bg-dark: #121212;
+  --text-dark: #e0e0e0;
+  --primary-dark: #1e3a8a;
+  --border-dark: #333333;
+}
+
+/* Body normale */
+body {
+  margin: 0;
+  background-color: var(--blu);
+  color: var(--nero);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode body */
+body.dark-mode {
+  background-color: var(--primary-dark);
+  color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+/* Toggle bottone */
+#toggleTheme {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Icona bottone */
+.theme-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+/* Dark mode per popup e form */
+body.dark-mode .popup,
+body.dark-mode .popup .form {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+/* Colora solo "Oppure" in bianco in dark mode */
+body.dark-mode .switch-to-login .dark-only {
+  color: var(--bianco);
+}
+body.dark-mode .switch-to-register .dark-only {
+  color: var(--bianco);
+}
+
+/* Dark mode per input dentro popup */
+body.dark-mode .popup input[type="text"],
+body.dark-mode .popup input[type="password"],
+body.dark-mode .popup input[type="email"],
+body.dark-mode .popup textarea {
+  background-color: var(--border-dark);
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Colore della X chiudi popup in dark mode */
+body.dark-mode .popup .close-btn span {
+  color: var(--bianco);
+  cursor: pointer;
+}
+
+/* Resto del CSS come lo avevi */
+
+/* Posizionamento centrato */
+.posizionamentoCentro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* BOTTONE */
+.btn {
+  background-color: var(--giallo);
+  color: var(--blu);
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 21px;
+  border-style: none;
+  padding: 10px 85px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+  transition: all 0.4s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover {
+  background-color: var(--gialloHover);
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(248, 202, 77, 0.4);
+}
+.btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 8px var(--giallo);
+}
+
+/* Overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 9;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Popup base */
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  width: 260px;
+  background: var(--bianco);
+  border-radius: 21px;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 10;
+}
+.popup.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup.fade-out {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  pointer-events: none;
+}
+
+/* Slider form login/registrazione */
+.form-slider {
+  display: flex;
+  width: 200%;
+  transition: transform 0.5s ease;
+}
+.popup.slide-register .form-slider {
+  transform: translateX(-50%);
+}
+
+/* FORM */
+.form {
+  width: 100%;
+  padding: 20px;
+  background: var(--bianco);
+}
+.popup .form h2 {
+  font-size: 26px;
+  color: var(--blu);
+  font-weight: bold;
+  margin-top: 24px;
+}
+.popup .form .form-element {
+  margin: 13px 0;
+}
+.popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="password"],
+.popup .form .form-element input[type="email"],
+.popup .form .form-element textarea {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: var(--backsezioneFrom);
+  color: var(--inputcolore);
+  display: block;
+  padding: 13px;
+  outline: none;
+  border: 1px solid var(--backsezioneFrom);
+  border-radius: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Bottone form */
+.btn-form {
+  width: 80%;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: var(--giallo);
+  color: var(--nero);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+  transition: all 0.4s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-form:hover {
+  color: var(--blu);
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(248, 202, 77, 0.4);
+}
+.btn-form:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 8px var(--giallo);
+}
+
+/* Link e testi */
+.popup .form .form-element a {
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.registrazioneLink {
+  color: var(--blu);
+}
+.registrazioneLink:hover {
+  text-decoration: underline;
+}
+.switch-to-register,
+.switch-to-login {
+  color: var(--nero);
+}
+
+/* Bottone di chiusura MODIFICATO */
+.popup .close-btn {
+  position: fixed; /* Cambiato da absolute a fixed */
+  right: 10px;
+  top: 10px;
+  z-index: 11;
+}
+.popup .close-btn img {
+  cursor: pointer;
+  width: 32px;
+}
+
+/* Testi ospite */
+.continuaOspite {
+  color: var(--inputcolore);
+}
+.continuaOspite:hover {
+  color: var(--blu);
+}
+
+/* Form botton */
+.formBotton {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Password style */
+.passwordStyleInput {
+  display: flex;
+}
+.passwordStyleInput img {
+  width: 27px;
+  margin-top: 6px;
+  margin-left: 5px;
+  object-fit: contain;
+}
+
+/* Checkbox */
+.check {
+  margin-left: 6px;
+}
+.styleCheckbox {
+  vertical-align: middle;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Media query per popup più grande su desktop */
+@media (min-width: 768px) {
+  .popup.active {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+}

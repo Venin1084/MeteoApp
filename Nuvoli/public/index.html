@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="../public/LoginPage/AppMetoFrontendMaterial/logoNuvoli.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuvolì</title>
+  <link rel="stylesheet" href="ledingpageStyle.css">
+</head>
+
+<body>
+  <!-- Navbar for theme toggle -->
+  <nav class="navbar">
+    <button id="toggleTheme" aria-label="Toggle dark mode"></button>
+    <!-- Bottoni lingue -->
+    <div id="dropdown" role="menu">
+      <button id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
+        <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/Italia.png" alt="Bandiera Italiana"
+          draggable="false">
+        <span class="language-text">Italiano</span>
+      </button>
+      <div id="dropdownMenu" role="menu">
+        <button type="button" role="menuitem">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/Italia.png" alt="Bandiera Italiana"
+            draggable="false"> Italiano</button>
+        <button type="button" role="menuitem">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/inghilterra.jpg" alt="Bandiera Inglese"
+            draggable="false"> English</button>
+        <button type="button" role="menuitem">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/francia.png" alt="Bandiera Francese"
+            draggable="false">Français</button>
+        <button type="button" role="menuitem">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/marocco.png" alt="Bandiera Marocchina"
+            draggable="false">العربية</button>
+        <button type="button" role="menuitem">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/albania.png" alt="Bandiera Albanese"
+            draggable="false">Shqip</button>
+        <button type="button" role="menuitem">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/iran.webp" alt="Bandiera Iraniana"
+            draggable="false">Finglish</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="overlay" id="overlay"></div>
+
+    <div class="image">
+      <img src="../public/LoginPage/AppMetoFrontendMaterial/logoNuvoli.png" alt="Logo Nuvolì">
+    </div>
+
+    <div class="text">
+      <h1 class="titilePage">Nuvolì</h1>
+      <h2 class="subTile">Il meteo a portata di clic</h2>
+      <p class="ptext">Perché le previsioni le puoi trovare anche qui!</p>
+
+      <div class="formEndBotton">
+        <button class="btn" id="show-login">Inizia</button>
+      </div>
+
+      <!-- Popup Form Container -->
+      <div class="popup" id="popup-container">
+        <div class="close-btn"><img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/icone/iconaChiusura.png"
+            alt="Chiudi"></div>
+
+        <div class="form-slider" id="form-slider">
+          <!-- Login Form -->
+          <form class="form login-form">
+            <h2 class="formTitile">Login</h2>
+            <div class="form-element">
+              <input type="text" name="username" placeholder="Nome">
+            </div>
+            <div class="form-element">
+              <input type="password" name="password" placeholder="Password" class="password-input">
+              <input type="checkbox" id="MostraPasswordLogin" class="toggle-password styleCheckbox check">
+              <label for="MostraPasswordLogin" class="styleCheckbox">Mostra la password</label>
+            </div>
+            <div class="form-element">
+              <button class="btn-form" type="submit">Entra</button>
+            </div>
+            <div class="formBotton">
+              <div class="form-element">
+                <a href="#" class="switch-to-register"><span class="dark-only">Oppure</span> <span
+                    class="registrazioneLink">Registrati</span></a>
+              </div>
+              <div class="form-element">
+                <a href="../public/MiddlePage/middlePage.html" class="continuaOspite">Continua Come Ospite</a>
+              </div>
+            </div>
+          </form>
+
+          <!-- Registration Form -->
+          <form class="form register-form">
+            <h2 class="formTitile">Registrazione</h2>
+            <div class="form-element">
+              <input type="text" name="username" placeholder="Nome">
+            </div>
+            <div class="form-element">
+              <input type="password" name="password" placeholder="Password" class="password-input">
+              <input type="checkbox" id="MostraPasswordReg" class="toggle-password styleCheckbox check">
+              <label for="MostraPasswordReg" class="styleCheckbox">Mostra la password</label>
+            </div>
+            <div class="form-element">
+              <button class="btn-form" type="submit">Entra</button>
+            </div>
+            <div class="formBotton">
+              <div class="form-element">
+                <a href="#" class="switch-to-login"><span class="dark-only">Oppure</span> <span
+                    class="registrazioneLink">Accedi</span></a>
+              </div>
+              <div class="form-element">
+                <a href="../public/MiddlePage/middlePage.html" class="continuaOspite">Continua Come Ospite</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="ledingPageJS.js"></script>
+</body>
+
+</html>

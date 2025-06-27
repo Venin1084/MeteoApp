@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="NavbarStyle.css" />
+  <title>Navbar Component</title>
+</head>
+<body>
+     <div class="overlay" id="overlay"></div>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="AppMetoFrontendMaterial/logoNuvoli.png" alt="Logo Nuvoli" />
+      <h2 class="nameBrand">NUVOLÌ</h2>
+    </div>
+
+    <!-- Sidebar Contatti -->
+    <div class="off-screen-menu">
+      <div class="contatti">
+        <h2 class="sidebarTitle">Contattaci</h2>
+        <div class="form-element"><input type="text" placeholder="Nome" /></div>
+        <div class="form-element"><input type="email" placeholder="Email" /></div>
+        <div class="form-element"><textarea placeholder="Messaggio"></textarea></div>
+        <div class="form-element"><button class="btn-form">Invia</button></div>
+      </div>
+    </div>
+
+    <!-- Navbar Icone e Hamburger -->
+    <nav>
+      <div class="elemetini">
+        <div class="darkMode-container">
+
+          <!-- Icona per modalità -->
+<!-- Sostituisci il vecchio pulsante con questo -->
+<button id="toggleTheme" aria-label="Toggle dark mode" class="theme-toggle">
+  <img src="AppMetoFrontendMaterial/Ref/icone/icons8-non-disturbare-2-100.png" alt="Dark mode" id="themeIcon" class="theme-icon">
+</button>
+        </div>
+        <div class="icona-container">
+          <img class="iconaUser" src="AppMetoFrontendMaterial/Ref/icone/iconaUser.png" alt="Esci" />
+          <div class="tooltip">Esci</div>
+        </div>
+        <div class="ham-menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Barra di ricerca città -->
+  <div class="search-wrapper">
+    <input type="text" id="city" placeholder="Inserisci città..." autocomplete="off" />
+    <img src="AppMetoFrontendMaterial/Ref/icone/iconaLente.png" class="search-icon" alt="search" />
+    <div id="suggerimenti" class="suggestions-box"></div>
+  </div>
+  
+  <script src="NavbarJS.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="AppMetoFrontendMaterial/logoNuvoli.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuvolì</title>
+  <link rel="stylesheet" href="middlePageStyle.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="../MiddlePage/middlePage.html">
+        <img src="AppMetoFrontendMaterial/logoNuvoli.png" alt="Logo Nuvoli" />
+      </a>
+      <h2 class="nameBrand">NUVOLÌ</h2>
+    </div>
+
+    <!-- Sidebar Contatti -->
+    <div class="off-screen-menu">
+      <div class="contatti">
+        <h2 class="sidebarTitle">Contattaci</h2>
+        <div class="form-element"><input type="text" placeholder="Nome" /></div>
+        <div class="form-element"><input type="email" placeholder="Email" /></div>
+        <div class="form-element"><textarea placeholder="Messaggio"></textarea></div>
+        <div class="form-element"><button class="btn-form">Invia</button></div>
+      </div>
+    </div>
+
+    <!-- Navbar Icone e Hamburger -->
+    <nav>
+      <div class="elemetini">
+        <div class="darkMode-container">
+
+          <!-- Icona per modalità -->
+          <!-- Sostituisci il vecchio pulsante con questo -->
+          <button id="toggleTheme" aria-label="Toggle dark mode" class="theme-toggle">
+            <img src="AppMetoFrontendMaterial/Ref/icone/icons8-non-disturbare-2-100.png" alt="Dark mode" id="themeIcon"
+              class="theme-icon">
+          </button>
+        </div>
+        <div class="icona-container">
+          <a href="../index.html">
+            <img class="iconaUser" src="AppMetoFrontendMaterial/Ref/icone/iconaUser.png" alt="Esci" />
+          </a>
+          <div class="tooltip">Esci</div>
+        </div>
+        <div class="ham-menu">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Barra di ricerca città -->
+  <div class="search-wrapper">
+    <input type="text" id="city" placeholder="Inserisci città..." autocomplete="off" />
+    <img src="AppMetoFrontendMaterial/Ref/icone/iconaLente.png" class="search-icon" alt="search" />
+    <div id="suggerimenti" class="suggestions-box"></div>
+  </div>
+
+
+
+  <!-- Cards delle città -->
+  <div class="cities-grid">
+    <div class="city-card" data-city="Torino">
+      <div class="city-header">
+        <div class="city-info">
+          <span class="region">Piemonte</span>
+          <h3 class="city-name">Torino</h3>
+          <span class="country">Italia</span>
+        </div>
+        <div class="weather-icon">
+          <img src="AppMetoFrontendMaterial/iconeAnimate/alba.gif" alt="Meteo nuvoloso"
+            style="width: 50px; height: 50px;">
+        </div>
+      </div>
+      <a class="select-btn btn" href="#">Seleziona</a>
+    </div>
+
+    <div class="city-card" data-city="Milano">
+      <div class="city-header">
+        <div class="city-info">
+          <span class="region">Lombardia</span>
+          <h3 class="city-name">Milano</h3>
+          <span class="country">Italia</span>
+        </div>
+        <div class="weather-icon">
+          <img src="AppMetoFrontendMaterial/iconeAnimate/grandine.gif" alt="Meteo nuvoloso"
+            style="width: 50px; height: 50px;">
+        </div>
+      </div>
+      <a class="select-btn btn" href="#">Seleziona</a>
+    </div>
+
+    <div class="city-card" data-city="Palermo">
+      <div class="city-header">
+        <div class="city-info">
+          <span class="region">Sicilia</span>
+          <h3 class="city-name">Palermo</h3>
+          <span class="country">Italia</span>
+        </div>
+        <div class="weather-icon">
+          <img src="AppMetoFrontendMaterial/iconeAnimate/pioggia.gif" alt="Meteo nuvoloso"
+            style="width: 50px; height: 50px;">
+        </div>
+      </div>
+      <a class="select-btn btn" href="#">Seleziona</a>
+    </div>
+
+    <div class="city-card" data-city="Courmayeur">
+      <div class="city-header">
+        <div class="city-info">
+          <span class="region">Valle d'Aosta</span>
+          <h3 class="city-name">Courmayeur</h3>
+          <span class="country">Italia</span>
+        </div>
+        <div class="weather-icon">
+          <img src="AppMetoFrontendMaterial/iconeAnimate/vento.gif" alt="Meteo nuvoloso"
+            style="width: 50px; height: 50px;">
+        </div>
+      </div>
+      <a class="select-btn btn" href="#">Seleziona</a>
+    </div>
+  </div>
+
+  <script src="middlePageJS.js"></script>
+</body>
+
+</html>

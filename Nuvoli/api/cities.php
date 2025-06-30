@@ -1,5 +1,5 @@
 <?php
-require '../database.php';
+require './database.php';
 
 // Lista di città prese dal database
 try {

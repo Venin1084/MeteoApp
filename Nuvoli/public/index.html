@@ -16,29 +16,35 @@
     <!-- Bottoni lingue -->
     <div id="dropdown" role="menu">
       <button id="dropdownBtn" aria-haspopup="true" aria-expanded="false">
-        <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/Italia.png" alt="Bandiera Italiana"
-          draggable="false">
-        <span class="language-text">Italiano</span>
+        <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/Italia.png" alt="it" draggable="false"><span
+          class="language-text">Italiano</span>
       </button>
       <div id="dropdownMenu" role="menu">
-        <button type="button" role="menuitem">
-          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/Italia.png" alt="Bandiera Italiana"
-            draggable="false"> Italiano</button>
-        <button type="button" role="menuitem">
-          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/inghilterra.jpg" alt="Bandiera Inglese"
-            draggable="false"> English</button>
-        <button type="button" role="menuitem">
-          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/francia.png" alt="Bandiera Francese"
-            draggable="false">Français</button>
-        <button type="button" role="menuitem">
-          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/marocco.png" alt="Bandiera Marocchina"
-            draggable="false">العربية</button>
-        <button type="button" role="menuitem">
-          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/albania.png" alt="Bandiera Albanese"
-            draggable="false">Shqip</button>
-        <button type="button" role="menuitem">
-          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/iran.webp" alt="Bandiera Iraniana"
-            draggable="false">Finglish</button>
+        <button type="button" role="menuitem" data-lang="it">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/Italia.png" alt="it" draggable="false">
+          <span data-translate-key="languageItalian">Italiano</span>
+        </button>
+        <button type="button" role="menuitem" data-lang="en">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/inghilterra.jpg" alt="en"
+            draggable="false">
+          <span data-translate-key="languageEnglish">English</span>
+        </button>
+        <button type="button" role="menuitem" data-lang="fr">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/francia.png" alt="fr" draggable="false">
+          <span data-translate-key="languageFrench">Français</span>
+        </button>
+        <button type="button" role="menuitem" data-lang="ar">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/marocco.png" alt="ar" draggable="false">
+          <span data-translate-key="languageArabic">لعربية</span>
+        </button>
+        <button type="button" role="menuitem" data-lang="sq">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/albania.png" alt="sq" draggable="false">
+          <span data-translate-key="languageAlbanian">Shqip</span>
+        </button>
+        <button type="button" role="menuitem" data-lang="fa">
+          <img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/Bandiere/iran.webp" alt="fa" draggable="false">
+          <span data-translate-key="languageFinglish">Finglish</span>
+        </button>
       </div>
     </div>
   </nav>
@@ -51,66 +57,72 @@
     </div>
 
     <div class="text">
-      <h1 class="titilePage">Nuvolì</h1>
-      <h2 class="subTile">Il meteo a portata di clic</h2>
-      <p class="ptext">Perché le previsioni le puoi trovare anche qui!</p>
+      <h1 class="titilePage" data-translate-key="appTitle">Nuvolì</h1>
+      <h2 class="subTile" data-translate-key="heroSubtitle">Il meteo a portata di clic</h2>
+      <p class="ptext" data-translate-key="heroDescription">Perché le previsioni le puoi trovare anche qui!</p>
 
       <div class="formEndBotton">
-        <button class="btn" id="show-login">Inizia</button>
+        <button class="btn" id="show-login" data-translate-key="loginButton">Inizia</button>
       </div>
 
       <!-- Popup Form Container -->
       <div class="popup" id="popup-container">
         <div class="close-btn"><img src="../public/LoginPage/AppMetoFrontendMaterial/Ref/icone/iconaChiusura.png"
-            alt="Chiudi"></div>
+            alt="Chiudi" data-translate-key="closeButtonAlt"></div>
 
         <div class="form-slider" id="form-slider">
           <!-- Login Form -->
           <form class="form login-form">
             <h2 class="formTitile">Login</h2>
             <div class="form-element">
-              <input type="text" name="username" placeholder="Nome">
+              <input type="text" name="username" placeholder="Nome" data-translate-key="namePlaceholder">
             </div>
             <div class="form-element">
-              <input type="password" name="password" placeholder="Password" class="password-input">
+              <input type="password" name="password" placeholder="Password" class="password-input"
+                data-translate-key="passwordPlaceholder">
               <input type="checkbox" id="MostraPasswordLogin" class="toggle-password styleCheckbox check">
-              <label for="MostraPasswordLogin" class="styleCheckbox">Mostra la password</label>
+              <label for="MostraPasswordLogin" class="styleCheckbox" data-translate-key="showPassword">Mostra la
+                password</label>
             </div>
             <div class="form-element">
-              <button class="btn-form" type="submit">Entra</button>
+              <button class="btn-form" type="submit" data-translate-key="enterButton">Entra</button>
             </div>
             <div class="formBotton">
               <div class="form-element">
-                <a href="#" class="switch-to-register"><span class="dark-only">Oppure</span> <span
-                    class="registrazioneLink">Registrati</span></a>
+                <a href="#" class="switch-to-register"><span class="dark-only" data-translate-key="orText">Oppure</span>
+                  <span class="registrazioneLink" data-translate-key="registerLink">Registrati</span></a>
               </div>
               <div class="form-element">
-                <a href="../public/MiddlePage/middlePage.html" class="continuaOspite">Continua Come Ospite</a>
+                <a href="../public/MiddlePage/middlePage.html" class="continuaOspite"
+                  data-translate-key="continueAsGuest">Continua Come Ospite</a>
               </div>
             </div>
           </form>
 
           <!-- Registration Form -->
           <form class="form register-form">
-            <h2 class="formTitile">Registrazione</h2>
+            <h2 class="formTitile" data-translate-key="registrationFormTitle">Registrazione</h2>
             <div class="form-element">
-              <input type="text" name="username" placeholder="Nome">
+              <input type="text" name="username" placeholder="Nome" data-translate-key="namePlaceholder">
             </div>
             <div class="form-element">
-              <input type="password" name="password" placeholder="Password" class="password-input">
+              <input type="password" name="password" placeholder="Password" class="password-input"
+                data-translate-key="passwordPlaceholder">
               <input type="checkbox" id="MostraPasswordReg" class="toggle-password styleCheckbox check">
-              <label for="MostraPasswordReg" class="styleCheckbox">Mostra la password</label>
+              <label for="MostraPasswordReg" class="styleCheckbox" data-translate-key="showPassword">Mostra la
+                password</label>
             </div>
             <div class="form-element">
-              <button class="btn-form" type="submit">Entra</button>
+              <button class="btn-form" type="submit" data-translate-key="enterButton">Entra</button>
             </div>
             <div class="formBotton">
               <div class="form-element">
-                <a href="#" class="switch-to-login"><span class="dark-only">Oppure</span> <span
-                    class="registrazioneLink">Accedi</span></a>
+                <a href="#" class="switch-to-login"><span class="dark-only" data-translate-key="orText">Oppure</span>
+                  <span class="registrazioneLink">Accedi</span></a>
               </div>
               <div class="form-element">
-                <a href="../public/MiddlePage/middlePage.html" class="continuaOspite">Continua Come Ospite</a>
+                <a href="../public/MiddlePage/middlePage.html" class="continuaOspite"
+                  data-translate-key="continueAsGuest">Continua Come Ospite</a>
               </div>
             </div>
           </form>
@@ -119,7 +131,83 @@
     </div>
   </div>
 
+  <script src="globalTranslations.js"></script>
+
   <script src="ledingPageJS.js"></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const showLoginBtn = document.getElementById('show-login');
+      const popupContainer = document.getElementById('popup-container');
+      const closeBtn = document.querySelector('.close-btn');
+      const overlay = document.getElementById('overlay');
+      const switchToRegisterLink = document.querySelector('.switch-to-register');
+      const switchToLoginLink = document.querySelector('.switch-to-login');
+      const formSlider = document.getElementById('form-slider');
+
+      if (showLoginBtn) {
+        showLoginBtn.addEventListener('click', () => {
+          popupContainer.style.display = 'block';
+          overlay.style.display = 'block';
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          popupContainer.style.display = 'none';
+          overlay.style.display = 'none';
+          //  modulo per accedere alla chiusura
+          if (formSlider) {
+            formSlider.style.transform = 'translateX(0)';
+          }
+        });
+      }
+
+      if (overlay) {
+        overlay.addEventListener('click', () => {
+          popupContainer.style.display = 'none';
+          overlay.style.display = 'none';
+
+          if (formSlider) {
+            formSlider.style.transform = 'translateX(0)';
+          }
+        });
+      }
+
+      //Funzionalità per mostrare/nascondere la password
+      document.querySelectorAll('.toggle-password').forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+          const passwordInput = this.parentElement.querySelector('.password-input');
+          if (this.checked) {
+            passwordInput.type = 'text';
+          } else {
+            passwordInput.type = 'password';
+          }
+        });
+      });
+
+      //Passaggio tra i moduli di accesso e di registrazione
+      if (switchToRegisterLink) {
+        switchToRegisterLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (formSlider) {
+            formSlider.style.transform = 'translateX(-50%)';
+          }
+        });
+      }
+
+      if (switchToLoginLink) {
+        switchToLoginLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (formSlider) {
+            formSlider.style.transform = 'translateX(0)';
+          }
+        });
+      }
+    });
+  </script>
+
 </body>
 
 </html>

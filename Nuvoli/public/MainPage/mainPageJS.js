@@ -13,11 +13,8 @@ async function getWeatherConfig() {
         return weatherConfig;
     } catch (error) {
         console.error('Errore configurazione API:', error);
-        // Fallback per sviluppo locale
-        return {
-            api_url: 'https://api.openweathermap.org/data/2.5/weather',
-            api_key: 'your_api_key_here' // Sostituire con la propria chiave API
-        };
+        // Nessun fallback con chiave API lato client!
+        throw new Error('Configurazione API non disponibile');
     }
 }
 
@@ -167,22 +164,7 @@ if (closeSidebar) {
 let cittaDisponibili = [];
 
 // === Carica città dall'API esterna se quella locale fallisce ===
-async function caricaCittaDaAPI() {
-  try {
-    // Prima prova con l'API locale
-    const res = await fetch('http://localhost/AppMeteo-1/api/citta');
-    if (!res.ok) throw new Error(`Status ${res.status}`);
-    const data = await res.json();
-    cittaDisponibili = data.map(c => c.Nome);
-  } catch (err) {
-    console.error('API locale error:', err);
-    // Fallback con liste di città predefinite
-    await caricaCittaPredefinite();
-  }
-}
-
-// === Fallback con città predefinite ===
-async function caricaCittaPredefinite() {
+async function caricaCittaDaDB() {
   try {
     const response = await fetch('../../api/cities.php');
     if (response.ok) {
@@ -200,7 +182,7 @@ async function caricaCittaPredefinite() {
   }
 }
 
-window.addEventListener('DOMContentLoaded', caricaCittaDaAPI);
+window.addEventListener('DOMContentLoaded', caricaCittaDaDB);
 
 function filtraSuggerimenti(valore = '') {
   const suggerimentiBox = document.getElementById('suggerimenti');
@@ -517,7 +499,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const city = getCityFromQuery();
     
     // 2) Carica i dati delle città
-    await caricaCittaDaAPI();
+    await caricaCittaDaDB();
     
     // 3) Aggiorna tutti i dati meteo
     await updateWeatherData(city);
